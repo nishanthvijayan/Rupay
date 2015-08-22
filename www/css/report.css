@@ -1,0 +1,57 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-font-smoothing: antialiased;
+    background-attachment:fixed;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+header{
+  height: 60px;
+  color : #ffffff;
+  position: fixed;
+  width: 100%;
+  top:0%;
+  text-align: center;
+  margin:0px;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.13);
+  z-index: 3;
+}
+header > h2{
+  float: left;
+  margin-left: 35%;
+  margin-top: 5%;
+  display: inline-block;
+  font-size: 140%;
+  font-weight: normal;
+}
+
+#content{
+  margin-top: 65px;
+}
+
+.home-btn{
+  position: fixed;
+  margin-top: 5%;
+  left: 7%;
+  font-size: 200%;
+  color:white;
+  text-decoration: none;
+}
+
+.date-labels{
+    padding-top: 3%;
+}
+
+p{
+    font-size:120%;
+}

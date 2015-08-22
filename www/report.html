@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />  
+
+        <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/report.css" />
+    
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/report.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+
+    </head>
+  
+    <body>
+        
+        <header data-role="header" class="red darken-3">
+          <h2>Statistics</h2>
+          <a href="index.html"><i class="fa fa-home fa-lg home-btn"></i></a>
+        </header>
+        
+        <div id="content">
+            <div id="date-selection">
+                <br>
+                <div class="row">
+                    <form class="col s10 offset-s1">
+                        
+                        <span class="input-field col s4 date-labels">Start: </span>
+                        <div id="date-input-field-start" class="input-field col s8"></div>
+                        <br>
+                        <span class="input-field col s4 date-labels">End: </span>
+                        <div id="date-input-field-end" class="input-field col s8"></div>
+                        
+                    </form>
+                </div>
+            </div>
+        
+            <div id="report-card">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div id="report-card-content" class="card-content">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div id="graph-card">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div  id="graph-card-content" class="card">
+                            <div  class="card-content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        
+        </div>
+  </body>
+
+</html>
