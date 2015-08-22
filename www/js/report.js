@@ -27,11 +27,17 @@ function  generateReport(){
 	tagSet.sort(compareTags);
 
 	$("#report-card-content > div").remove();
+	$("#report-card-content > table").remove();
 	$("#report-card-content").append('<div><span class="card-title black-text">Total Amount<span class="right">'+sum+' ₹ </span></span>\
-	    <br><br><p>Average : '+avgPerDay+'₹  per day</p><br></div>');
+	    <br><br></div>');
+	
+	$("#report-card-content").append('<table></table>')
+
+	$("#report-card-content >table").append("<tr><td>Average</td><td>"+avgPerDay+"₹ / day </td></tr>");
 	
 	$.each(tagSet , function(i,tag){
-		$("#report-card-content >div").append("<p>"+tag.title+": "+tag.amount+"₹ </p>");
+		percent = (parseFloat(tag.amount)*100/sum).toFixed(2);
+		$("#report-card-content >table").append("<tr><td>"+tag.title+"</td><td>"+tag.amount+"₹ </td><td>"+percent+"%</td></tr>");
 	});
 
 }
@@ -67,6 +73,7 @@ $(document).ready(function(){
 		
 		if( new Date($("#datepicker-start")[0].value).getTime() > new Date($("#datepicker-end")[0].value).getTime() ){
 			$("#report-card-content > div").remove();
+			$("#report-card-content > table").remove();
 			$("#report-card-content").append('<div><span class="card-title black-text">Error!</span>\
 		        <br><br><p>Start date cannot be after End date.</p><br></div>');
 		}

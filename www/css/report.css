@@ -49,9 +49,14 @@ header > h2{
 }
 
 .date-labels{
-    padding-top: 3%;
+  padding-top: 3%;
+}
+p,td{
+  font-size:125%;
 }
 
-p{
-    font-size:120%;
+td{
+  font-weight: 100;
+  padding-top: 0;
+  padding-bottom: 0;
 }
