@@ -1,3 +1,12 @@
+function compareTags(a,b) {
+  	if (a["amount"] < b["amount"])
+    	return 1;
+  	if (a["amount"] > b["amount"])
+    	return -1;
+  	return 0;
+}
+
+
 function  generateReport(){
 	sum = 0;
 	tags = {}
@@ -11,31 +20,19 @@ function  generateReport(){
 	noOfDays = ((new Date($("#datepicker-end")[0].value).getTime() - new Date($("#datepicker-start")[0].value).getTime())/86400000)+1;
 	avgPerDay = (sum / noOfDays).toFixed(2);
 
+	tagSet = []
+	$.each(tags , function(title,amount){
+		tagSet.push({"title":title,"amount":amount});
+	});
+	tagSet.sort(compareTags);
+
 	$("#report-card-content > div").remove();
 	$("#report-card-content").append('<div><span class="card-title black-text">Total Amount<span class="right">'+sum+' ₹ </span></span>\
 	    <br><br><p>Average : '+avgPerDay+'₹  per day</p><br></div>');
 	
-	$.each(tags , function(title,amount){
-		$("#report-card-content >div").append("<p>"+title+": "+amount+"₹ </p>");
+	$.each(tagSet , function(i,tag){
+		$("#report-card-content >div").append("<p>"+tag.title+": "+tag.amount+"₹ </p>");
 	});
-
-	// var dataSet = [
- //    {label: "Asia", data: 4119630000, color: "#005CDE" },
- //    { label: "Latin America", data: 590950000, color: "#00A36A" },
- //    { label: "Africa", data: 1012960000, color: "#7D0096" },
- //    { label: "Oceania", data: 35100000, color: "#992B00" },
- //    { label: "Europe", data: 727080000, color: "#DE000F" },
- //    { label: "North America", data: 344120000, color: "#ED7B00" }    
-	// ];
-
-	// $.plot($("#graph-card-content"), dataSet, {
- //    series: {
- //        pie: {
- //            innerRadius: 0.5,
- //            show: true
- //        }
-	// }
-	// });
 
 }
 
