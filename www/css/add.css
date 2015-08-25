@@ -52,3 +52,50 @@ header > h2{
   right: 7%;
   text-align: center;
 }
+div.combobox > * {z-index: 3;}
+div.combobox    {position: relative;zoom: 1}
+div.combobox    div.dropdownlist    {
+  display: none;
+  width: 95%;
+  border: solid 1px #cbcbcb;
+  background-color: #fff;
+  height: 200px;
+  overflow: auto;
+  position: absolute;
+  top: 28px;
+  left: 0px;
+}
+div.combobox    .dropdownlist   a   {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  height: 1em;
+  cursor: default;
+  border-top:solid #cbcbcb 1px;
+}
+div.combobox    .dropdownlist   a.light {
+  color: black;
+}
+div.combobox    .dropdownlist, input {
+  font-family: Tahoma;
+  font-size: 130%;
+}
+div.combobox    input {
+  float: left;
+  width: 85%;
+  border: solid 1px #ccc;
+  height: 25px;
+}
+div.combobox    span    {
+  border: solid 1px #ccc;
+  background-color: #eee;
+  width: 10%;
+  height: 27px;
+  float: left;
+  text-align: center;
+  border-left: none;
+  cursor: default
+}

@@ -15,6 +15,10 @@ function compare(a,b) {
 $(document).ready(function(){	
 	
 	FastClick.attach(document.body);
+	
+	$.each(JSON.parse(localStorage.getItem("tagSet")) , function(i,entry){
+		$(".dropdownlist > div").append("<a>"+entry+"</a>");
+	});
 
 	if(localStorage.getItem("editIndex")){
 		index = localStorage.getItem("editIndex");
@@ -23,7 +27,7 @@ $(document).ready(function(){
 		
 		item = JSON.parse(localStorage.getItem("data"))[index];
 		$("#amount")[0].value = item.amount;
-		$("#title")[0].value = item.title;
+		$(".title")[0].value = item.title;
 		$("#note")[0].value = item.note;
 		$("#date-input-field").append('<input id="datepicker" type="date" class="datepicker" data-value="'+item.date+'">')
 	}else{
@@ -40,13 +44,13 @@ $(document).ready(function(){
     	if(!$("#amount")[0].value){
     		window.plugins.toast.show("Sorry, Amount cannot be empty", 'long', 'bottom', function(a){}, function(b){});
     		return;
-    	}else if(!$("#title")[0].value){
+    	}else if(!$(".title")[0].value){
     		window.plugins.toast.show("Sorry, Title cannot be empty", 'long', 'bottom', function(a){}, function(b){});
     		return;
     	}else if(!$("#datepicker")[0].value){
     		window.plugins.toast.show("Sorry, Date cannot be empty", 'long', 'bottom', function(a){}, function(b){});
     		return;
-    	}else if($("#title")[0].value.length >15){
+    	}else if($(".title")[0].value.length >15){
     		window.plugins.toast.show("Sorry, Title should be less that 15 letters", 'long', 'bottom', function(a){}, function(b){});
     		return;
     	}
@@ -60,7 +64,7 @@ $(document).ready(function(){
 			id = data[index].id;
 			item = {
 				"amount":$("#amount")[0].value,
-				"title":$("#title")[0].value,
+				"title":$(".title")[0].value,
 				"note":$("#note")[0].value,
 				"date":$("#datepicker")[0].value,
 				"id":id
@@ -74,7 +78,7 @@ $(document).ready(function(){
 			id = new Date().getTime();
 			item = {
 				"amount":$("#amount")[0].value,
-				"title":$("#title")[0].value,
+				"title":$(".title")[0].value,
 				"note":$("#note")[0].value,
 				"date":$("#datepicker")[0].value,
 				"id":id

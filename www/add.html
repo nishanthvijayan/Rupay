@@ -36,24 +36,34 @@
                             <label for="amount">Amount</label>
                         </div>
                     </div>
-                    <div>
-                        <div class="input-field col s6">
-                            <input id="title" type="text" class="validate" length="15">
-                            <label for="title">Title</label>
-                        </div>
-                    
-                        <div id="date-input-field" class="input-field col s6">
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="note" placeholder="note">
+                            <div class="combobox">
+                                <input type="text" name="comboboxfieldname" id="cb_identifier" class="title" ><span>▼</span>
+                                <div class="dropdownlist">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                     <div>
+                        <div id="date-input-field" class="input-field col s6">
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="text" id="note" placeholder="note">
+                        </div>
+                    </div> 
+
                 </form>
             </div>
         </div>
         <a class="btn-floating btn-large red done-btn"><i class="fa fa-check fa-lg"></i></a>
+        
+        <script type="text/javascript" charset="utf-8" src="js/combobox.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var no = new ComboBox('cb_identifier');
+        </script>
 
   </body>
 </html>

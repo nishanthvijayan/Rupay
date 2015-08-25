@@ -1,7 +1,7 @@
 function init(){
 
 	data = (localStorage.getItem("data"))?JSON.parse(localStorage.getItem("data")):[];
-	
+	tagSet = []
 	
 	$("#content").empty();
 
@@ -25,9 +25,12 @@ function init(){
 	                </div>\
 	            </div>\
 	        </div>\
-			');
+		');
+		if(tagSet.indexOf(entry.title) == -1){
+			tagSet.push(entry.title);
+		}
 	});
-
+	localStorage.setItem("tagSet",JSON.stringify(tagSet));
 }
 
 function removeEntry(id){
