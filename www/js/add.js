@@ -12,13 +12,27 @@ function compare(a,b) {
   	return 0;
 }
 
+function generateTagSet(){
+
+	data = (localStorage.getItem("data"))?JSON.parse(localStorage.getItem("data")):[];
+	tagSet = [];
+	$.each(data , function(i,entry){
+		if(tagSet.indexOf(entry.title) == -1){
+			tagSet.push(entry.title);
+		}
+	});
+	return tagSet;
+}
+
 $(document).ready(function(){	
 	
 	FastClick.attach(document.body);
-	
-	$.each(JSON.parse(localStorage.getItem("tagSet")) , function(i,entry){
+
+	tagSet = generateTagSet();
+	$.each(tagSet , function(i,entry){
 		$(".dropdownlist > div").append("<a>"+entry+"</a>");
 	});
+	
 	var no = new ComboBox('cb_identifier');
 	
 	if(localStorage.getItem("editIndex")){

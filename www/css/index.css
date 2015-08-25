@@ -31,19 +31,49 @@ header > h2{
   display: inline-block;
   font-size: 140%;
 }
-
+#search-header{
+  display: none;
+}
 .report-btn{
   position: fixed;
   margin-top: 5%;
   left: 7%;
   font-size: 180%;
   color:white;
-  text-decoration: none;
+}
+.back-btn{
+  position: fixed;
+  margin-top: 5%;
+  left: 6%;
+  font-size: 180%;
+  color:white;
+}
+.search-btn-show{
+  position: fixed;
+  margin-top: 5%;
+  left: 87%;
+  font-size: 180%;
+  color:white;
+}
+.search-btn-action{
+  position: fixed;
+  margin-top: 5%;
+  left: 87%;
+  font-size: 180%;
+  color:white;
+}
+#search-input{
+  left: 15%;
+  padding-top: 2%;
+  padding-bottom: 0%;
+  width: 65%;
+  font-size: 130%;
 }
 
 #content{
   margin-top: 65px;
 }
+
 .option-close{
   font-style: normal;
 } 
@@ -79,4 +109,12 @@ div.removed-item {
   right: 7%;
   text-align: center;
   font-size: 200%;
+}
+.more-btn{
+  margin-left: 30%;
+  margin-bottom:4%;
+  text-align: center;
+  font-size: 100%;
+  color: #000; 
+  text-transform: none;
 }
