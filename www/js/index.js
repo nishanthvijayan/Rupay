@@ -40,8 +40,14 @@ function removeEntry(id){
 	data = JSON.parse(localStorage.getItem("data"));
 
 	item = $("#id"+id);
-	index = item.index();
-
+	
+	for (i = 0; i < data.length; i++) {
+		if(data[i].id == id){
+			index = i;
+			break;
+		}
+	}
+	
 	item.addClass("removed-item").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
         $(this).remove();
         data.splice(index,1);
@@ -51,7 +57,12 @@ function removeEntry(id){
 
 function editEntry(id){
 	item = $("#id"+id);
-	index = item.index();
+	for (i = 0; i < data.length; i++) {
+		if(data[i].id == id){
+			index = i;
+			break;
+		}
+	}
 	localStorage.setItem("editIndex",index);
 	window.open("add.html");
 }
@@ -80,6 +91,7 @@ $(document).ready(function(){
     	$("#general-header").show();
     	$("#search-header").hide();
     	init(20);
+    	window.scrollTo(0,0);
     });
 
 
