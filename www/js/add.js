@@ -19,7 +19,8 @@ $(document).ready(function(){
 	$.each(JSON.parse(localStorage.getItem("tagSet")) , function(i,entry){
 		$(".dropdownlist > div").append("<a>"+entry+"</a>");
 	});
-
+	var no = new ComboBox('cb_identifier');
+	
 	if(localStorage.getItem("editIndex")){
 		index = localStorage.getItem("editIndex");
 		
