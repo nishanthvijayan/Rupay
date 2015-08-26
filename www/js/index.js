@@ -37,22 +37,32 @@ function init(limit){
 }
 
 function removeEntry(id){
-	data = JSON.parse(localStorage.getItem("data"));
+	
+	navigator.notification.confirm("Delete entry?",
+	function( index ) {
+		if ( index==2 ){
+			data = JSON.parse(localStorage.getItem("data"));
 
-	item = $("#id"+id);
+			item = $("#id"+id);
+			
+			for (i = 0; i < data.length; i++) {
+				if(data[i].id == id){
+					index = i;
+					break;
+				}
+			}
+			
+			item.addClass("removed-item").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+				$(this).remove();
+				data.splice(index,1);
+				localStorage.setItem("data",JSON.stringify(data));
+			});  	
+      	}
+    },
+    "Confirm",
+    [ "No","Yes" ]
+  	);
 	
-	for (i = 0; i < data.length; i++) {
-		if(data[i].id == id){
-			index = i;
-			break;
-		}
-	}
-	
-	item.addClass("removed-item").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-        $(this).remove();
-        data.splice(index,1);
-        localStorage.setItem("data",JSON.stringify(data));
-	});
 };
 
 function editEntry(id){
