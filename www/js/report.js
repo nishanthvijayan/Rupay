@@ -47,16 +47,19 @@ function  generateReport(){
 
 $(document).ready(function(){	
 
-	var viewport = {
-    	width  : $(window).width(),
-    	height : $(window).height()
-	};
+	// var viewport = {
+ 	// 		width  : $(window).width(),
+	// 		height : $(window).height()
+	// };
 
 	FastClick.attach(document.body);
 	
-	$("#date-input-field-end").append('<input id="datepicker-end" type="date" class="datepicker" data-value="'+new Date().toDateString()+'">')
-	$("#date-input-field-start").append('<input id="datepicker-start" type="date" class="datepicker" data-value="'+new Date().toDateString()+'">')
+	var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+	var d = new Date()
+	$("#date-input-field-end").append('<input id="datepicker-end" type="date" class="datepicker" data-value="'+d.toDateString()+'">')
+	$("#date-input-field-start").append('<input id="datepicker-start" type="date" class="datepicker" data-value="'+d.toDateString()+'">')
+	$("#curr_month_btn").text(monthNames[d.getMonth()] + " " + d.getFullYear());
 	$('.datepicker').pickadate({
     	selectMonths: true,
     	selectYears: 5
@@ -68,6 +71,33 @@ $(document).ready(function(){
 	data = (localStorage.getItem("data"))?JSON.parse(localStorage.getItem("data")):[];
 	generateReport();
 
+	$("#today_btn").click(function(){
+
+		var d = new Date();
+		$("#datepicker-end")[0].value = d.toDateString();
+		$("#datepicker-start")[0].value = d.toDateString();
+		$(".datepicker").change();
+
+	});
+
+	$("#yesterday_btn").click(function(){
+
+		var d = new Date(new Date() - (24*60*60*1000));
+		$("#datepicker-end")[0].value = d.toDateString();
+		$("#datepicker-start")[0].value = d.toDateString();
+		$(".datepicker").change();
+
+	});
+
+	$("#curr_month_btn").click(function(){
+		
+		var d_end = new Date();
+		var d_start = new Date(d_end.getFullYear(),d_end.getMonth(),1); 
+		$("#datepicker-end")[0].value = d_end.toDateString();
+		$("#datepicker-start")[0].value = d_start.toDateString();
+		$(".datepicker").change();
+
+	});
 
 	$(".datepicker").change(function(){
 		
@@ -80,4 +110,6 @@ $(document).ready(function(){
 		else 
 			generateReport();
 	});
+
+
 });

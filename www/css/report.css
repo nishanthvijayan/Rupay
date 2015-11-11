@@ -60,3 +60,9 @@ td{
   padding-top: 0;
   padding-bottom: 0;
 }
+
+.btn-row  > a{
+  border: 1px solid #cfd8dc;
+  text-align: center;
+  background-color: #FFF9FA;
+}

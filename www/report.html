@@ -23,13 +23,22 @@
     <body>
         
         <header data-role="header" class="red darken-3">
-          <h2>Statistics</h2>
-          <a href="index.html"><i class="fa fa-home fa-lg home-btn"></i></a>
+            <h2>Statistics</h2>
+            <a href="index.html"><i class="fa fa-home fa-lg home-btn"></i></a>
+            <br>
         </header>
-        
         <div id="content">
-            <div id="date-selection">
-                <br>
+            <div id="date-selection" class="card">
+            <div class="card-content">
+                
+                <div class="row">
+                    <form class="col s12 btn-row">
+                        <a class="waves-effect btn-flat col s4" id="today_btn">Today</a>
+                        <a class="waves-effect btn-flat col s4" id="yesterday_btn">Yesterday</a>
+                        <a class="waves-effect btn-flat col s4" id="curr_month_btn"></a>
+                    </form>
+                </div>
+
                 <div class="row">
                     <form class="col s10 offset-s1">
                         
@@ -41,6 +50,7 @@
                         
                     </form>
                 </div>
+            </div>  
             </div>
         
             <div id="report-card">
