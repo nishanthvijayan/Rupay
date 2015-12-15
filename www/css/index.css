@@ -1,68 +1,84 @@
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-attachment:fixed;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    width:100%;
+  -webkit-touch-callout: none;
+
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 }
-header{
+
+header {
   height: 60px;
-  color : #ffffff;
+  color: #ffffff;
   position: fixed;
   width: 100%;
-  top:0%;
+  top: 0%;
   text-align: center;
-  margin:0px;
+  margin: 0px;
   width: 100%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.13);
   z-index: 3;
 }
-header > h2{
+
+header > h2 {
   float: left;
   margin-left: 30%;
   margin-top: 5%;
   display: inline-block;
   font-size: 140%;
 }
-#search-header{
+
+#search-header {
   display: none;
 }
-.report-btn{
+
+.report-btn {
   position: fixed;
   margin-top: 5%;
   left: 7%;
   font-size: 180%;
-  color:white;
+  color: white;
 }
-.back-btn{
+
+.back-btn {
   position: fixed;
   margin-top: 5%;
   left: 6%;
   font-size: 180%;
-  color:white;
+  color: white;
 }
-.search-btn-show{
+
+.search-btn-show {
   position: fixed;
   margin-top: 5%;
   left: 87%;
   font-size: 180%;
-  color:white;
+  color: white;
 }
-.search-btn-action{
+
+.search-btn-action {
   position: fixed;
   margin-top: 5%;
   left: 87%;
   font-size: 180%;
-  color:white;
+  color: white;
 }
-#search-input{
+
+#search-input {
   left: 15%;
   padding-top: 2%;
   padding-bottom: 0%;
@@ -70,51 +86,53 @@ header > h2{
   font-size: 130%;
 }
 
-#content{
+#content {
   margin-top: 65px;
 }
 
-.option-close{
+.option-close {
   font-style: normal;
-} 
+}
 
 div.removed-item {
-    animation: removed-item-animation .8s cubic-bezier(.65,-0.02,.72,.29);
+  animation: removed-item-animation .8s cubic-bezier(.65, -0.02, .72, .29);
 }
- 
+
 @keyframes removed-item-animation {
-   0% {
-        opacity: 1;
-        transform: translateX(0);
-    }
- 
-    30% {
-        opacity: 1;
-        transform: translateX(50px);
-    }
- 
-    80% {
-        opacity: 1;
-        transform: translateX(-800px);
-    }
- 
-    100% {
-        opacity: 0;
-        transform: translateX(-800px);
-    }
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(-800px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-800px);
+  }
 }
-.add-btn{
+
+.add-btn {
   bottom: 5%;
   position: fixed;
   right: 7%;
   text-align: center;
   font-size: 200%;
 }
-.more-btn{
+
+.more-btn {
   margin-left: 30%;
-  margin-bottom:4%;
+  margin-bottom: 4%;
   text-align: center;
   font-size: 110%;
-  color: #000; 
+  color: #000;
   text-transform: none;
 }

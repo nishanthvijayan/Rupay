@@ -1,31 +1,40 @@
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-attachment:fixed;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    width:100%;
+  -webkit-touch-callout: none;
+
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 }
 
-header{
+header {
   height: 60px;
-  color : #ffffff;
+  color: #ffffff;
   position: fixed;
   width: 100%;
-  top:0%;
+  top: 0%;
   text-align: center;
-  margin:0px;
+  margin: 0px;
   width: 100%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.13);
   z-index: 3;
 }
-header > h2{
+
+header > h2 {
   float: left;
   margin-left: 30%;
   margin-top: 5%;
@@ -33,28 +42,36 @@ header > h2{
   font-size: 140%;
 }
 
-.close-btn{
+.close-btn {
   position: fixed;
   margin-top: 4%;
   left: 7%;
   font-size: 180%;
-  color:white;
+  color: white;
   text-decoration: none;
 }
 
-#content{
+#content {
   margin-top: 65px;
 }
 
-.done-btn{
+.done-btn {
   bottom: 5%;
   position: fixed;
   right: 7%;
   text-align: center;
 }
-div.combobox > * {z-index: 3;}
-div.combobox    {position: relative;zoom: 1}
-div.combobox    div.dropdownlist    {
+
+div.combobox > * {
+  z-index: 3;
+}
+
+div.combobox {
+  position: relative;
+  zoom: 1;
+}
+
+div.combobox    div.dropdownlist {
   display: none;
   width: 95%;
   border: solid 1px #cbcbcb;
@@ -65,7 +82,8 @@ div.combobox    div.dropdownlist    {
   top: 28px;
   left: 0px;
 }
-div.combobox    .dropdownlist   a   {
+
+div.combobox    .dropdownlist   a {
   display: block;
   text-decoration: none;
   color: #000;
@@ -74,22 +92,27 @@ div.combobox    .dropdownlist   a   {
   padding-bottom: 40px;
   height: 1em;
   cursor: default;
-  border-top:solid #cbcbcb 1px;
+  border-top: solid #cbcbcb 1px;
 }
+
 div.combobox    .dropdownlist   a.light {
   color: black;
 }
-div.combobox    .dropdownlist, input {
+
+div.combobox    .dropdownlist,
+input {
   font-family: Tahoma;
   font-size: 130%;
 }
+
 div.combobox    input {
   float: left;
   width: 85%;
   border: solid 1px #ccc;
   height: 25px;
 }
-div.combobox    span    {
+
+div.combobox    span {
   border: solid 1px #ccc;
   background-color: #eee;
   width: 10%;
@@ -97,5 +120,5 @@ div.combobox    span    {
   float: left;
   text-align: center;
   border-left: none;
-  cursor: default
+  cursor: default;
 }
